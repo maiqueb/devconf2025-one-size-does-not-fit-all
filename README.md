@@ -35,6 +35,9 @@ helm install . --generate-name -f ./values-single-node-zone.yaml \
 kubectl apply -f https://raw.githubusercontent.com/k8snetworkplumbingwg/multus-cni/refs/heads/master/deployments/multus-daemonset.yml
 kubectl apply -f https://raw.githubusercontent.com/k8snetworkplumbingwg/multi-networkpolicy/refs/tags/v1.0.1/scheme.yml
 kubectl apply -f https://raw.githubusercontent.com/k8snetworkplumbingwg/ipamclaims/v0.4.0-alpha/artifacts/k8s.cni.cncf.io_ipamclaims.yaml
+
+# lets wait for the availability of the ovnkube-node daemonset on all nodes ...
+kubectl rollout status daemonset -novn-kubernetes ovnkube-node --timeout 300s
 ```
 5. Install KubeVirt in your kind cluster
 ```
