@@ -1,0 +1,34 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: service-blue
+  namespace: blue
+  labels:
+    network: blue
+    purpose: devconf-eu-2025-demo
+spec:
+  type: NodePort
+  selector:
+    purpose: devconf-eu-2025-demo
+  ports:
+  - name: web
+    port: 80
+    targetPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: service-green
+  namespace: green
+  labels:
+    network: green
+    purpose: devconf-eu-2025-demo
+spec:
+  type: NodePort
+  selector:
+    purpose: devconf-eu-2025-demo
+  ports:
+  - name: web
+    port: 80
+    targetPort: 8080
