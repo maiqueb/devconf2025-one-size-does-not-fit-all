@@ -1,0 +1,20 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: allow-to-devconf-demo-pods
+  namespace: red
+  labels:
+    purpose: devconf-eu-2025-demo
+spec:
+  egress:
+  - to:
+    - podSelector:
+        matchLabels:
+          purpose: devconf-eu-2025-demo
+      namespaceSelector: {}
+    ports:
+    - protocol: TCP
+      port: 8080
+  podSelector: {}
+  policyTypes:
+  - Egress
