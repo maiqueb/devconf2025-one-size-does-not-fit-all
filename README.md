@@ -67,6 +67,25 @@ kubectl patch -n kubevirt kubevirt kubevirt \
     ]'
 ```
 
+## Pod workshop
+
+This part of the demo will get the participants familiar with the concept of UserDefinedNetwork (UDN). We will explore the following in detail:
+
+* What is a UDN and a CUDN
+* Creating UDNs and CUDNs to do network segmentation of a Kubernetes cluster
+* Creating pods and attaching them to these UDNs
+* Testing native network isolation across different UDNs
+* Creating NodePprt type services in these UDNs
+* Testing connectivity of clusterIP, nodePorts in these UDNs
+* Creating NetworkPolicy in these UDNs and testing connectivity
+* Ensuring Ingress and Egress works as expected for these UDN Pods
+* Concept of multi-homing for a pod in Kubernetes using UDNs
+* Creating pods in diffeernt UDNs with overlapping podIPs
+* All the commands required to be executed on your KIND cluster are provided [here](hhttps://github.com/maiqueb/devconf2025-one-size-does-not-fit-all/blob/main/manifests/udns-with-pods/commands-cheatsheet-for-participants.md).
+
+Workshop instruction manual that will be followed can be found [here](https://github.com/maiqueb/devconf2025-one-size-does-not-fit-all/blob/main/manifests/udns-with-pods/workshop-instructions-script.sh).
+
+
 ## VM workshop
 This part of the demo will focus on the virtualisation use cases. We will create
 a cluster UDN, spanning across multiple namespaces, start a VM in each namespace,

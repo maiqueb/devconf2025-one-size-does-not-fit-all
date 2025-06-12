@@ -258,8 +258,8 @@ run_cmd kubectl exec -it -n yellow app-yellow-0 -c agnhost-container-8080 -- cur
 ## EXTERNAL DNS GOOGLE.COM EGRESS/NORTH-SOUTH
 header "Connect from app-blue-0 to internet"
 run_cmd kubectl exec -it -n blue app-blue-0 -- ping -w 2 -c 3 8.8.8.8
-header "Connect from app-green-0 to internet"
-run_cmd kubectl exec -it -n green app-green-0 -- ping -w 2 -c 3 google.com
+#header "Connect from app-green-0 to internet"
+#run_cmd kubectl exec -it -n green app-green-0 -- ping -w 2 -c 3 google.com
 
 ## OVERLAPPING SUBNETS
 header "Create overlapping-udn and pods inside it"
